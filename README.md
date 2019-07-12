@@ -4,9 +4,9 @@ This repository contains an analysis using reduced NanoAOD files created from CM
 
 ![](plots/npv.png)
 
-![](plots/m_vis.png)
+![](plots/eta_2.png)
 
-![](plots/pt_met.png)
+![](plots/m_vis.png)
 
 # How to run this?
 
