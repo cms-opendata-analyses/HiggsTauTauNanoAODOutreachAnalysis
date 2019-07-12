@@ -7,6 +7,7 @@
 
 
 import ROOT
+ROOT.gROOT.SetBatch(True)
 
 
 # Declare the range of the histogram for each variable

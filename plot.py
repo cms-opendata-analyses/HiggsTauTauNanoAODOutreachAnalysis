@@ -5,6 +5,7 @@
 
 
 import ROOT
+ROOT.gROOT.SetBatch(True)
 
 
 # Declare a human-readable label for each variable
