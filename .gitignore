@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.o
+*.out
+*.root
+*.pyc
+*.pdf
+*.png
+skim
