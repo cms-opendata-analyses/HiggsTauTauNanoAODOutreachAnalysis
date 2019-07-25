@@ -2,7 +2,7 @@
 
 This repository contains an analysis using reduced NanoAOD files created from CMS open data studying the decay of a Higgs boson into two tau leptons. The code produces plots such as shown below which can be used to study the physics in the CMS datasets.
 
-Note that the analysis is not validated and can be used only for educational purposes, in particular since no systematic uncertainties are included.
+Note that the analysis is not validated and should be used only for educational purposes, in particular since no systematic uncertainties are included.
 
 ![](plots/npv.png)
 
