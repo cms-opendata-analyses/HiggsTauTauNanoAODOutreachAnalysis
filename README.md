@@ -4,6 +4,8 @@ This repository contains an analysis using reduced NanoAOD files created from CM
 
 Note that the analysis is not validated and should be used only for educational purposes, in particular since no systematic uncertainties are included.
 
+See the respective records in the CERN Open Data portal for further information.
+
 ![](plots/npv.png)
 
 ![](plots/eta_2.png)
@@ -20,7 +22,7 @@ The analysis needs solely a ROOT installation (6.16 or greater). You can get the
 source /cvmfs/sft.cern.ch/lcg/views/LCG_95/x86_64-slc6-gcc8-opt/setup.sh
 ```
 
-## Skim the dataset
+## Skim the datasets
 
 The skimming reduces the inital dataset to only the events needed for the analysis. This part is written in C++ in the file `skim.cxx`. To compile and run the program, use the following commands.
 
