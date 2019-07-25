@@ -4,7 +4,7 @@ This repository contains an analysis using reduced NanoAOD files created from CM
 
 Note that the analysis is not validated and should be used only for educational purposes, in particular since no systematic uncertainties are included.
 
-See the respective records in the CERN Open Data portal for further information.
+The analysis is loosely based on [the official CMS publication from 2014](http://cms-results.web.cern.ch/cms-results/public-results/publications/HIG-13-004/index.html). See the respective records in the CERN Open Data portal for further information.
 
 ![](plots/npv.png)
 
