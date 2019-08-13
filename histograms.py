@@ -114,7 +114,7 @@ def main():
 
         # Load skimmed dataset and apply baseline selection
         df = ROOT.ROOT.RDataFrame("Events", name + "Skim.root")\
-                      .Filter("mt_1<20", "Muon transverse mass cut for W+jets suppression")\
+                      .Filter("mt_1<30", "Muon transverse mass cut for W+jets suppression")\
                       .Filter("iso_1<0.1", "Require isolated muon for signal region")
 
         # Book histograms for the signal region
