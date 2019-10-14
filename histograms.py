@@ -70,9 +70,9 @@ def writeHistogram(h, name):
 #
 # See the skimming step for further details about this variable.
 def filterGenMatch(df, label):
-    if label is "ZTT":
+    if label == "ZTT":
         return df.Filter("gen_match == true", "Select genuine taus")
-    elif label is "ZLL":
+    elif label == "ZLL":
         return df.Filter("gen_match == false", "Select fake taus")
     else:
         return df
