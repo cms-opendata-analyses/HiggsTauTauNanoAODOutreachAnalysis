@@ -71,9 +71,9 @@ def writeHistogram(h, name):
 # See the skimming step for further details about this variable.
 def filterGenMatch(df, label):
     if label is "ZTT":
-        return df.Filter("gen_match == true")
+        return df.Filter("gen_match == true", "Select genuine taus")
     elif label is "ZLL":
-        return df.Filter("gen_match == false")
+        return df.Filter("gen_match == false", "Select fake taus")
     else:
         return df
 
@@ -110,7 +110,7 @@ def main():
             ("Run2012B_TauPlusX", "dataRunB"),
             ("Run2012C_TauPlusX", "dataRunC"),
         ]:
-        print(">>> Process skim {}".format(name))
+        print(">>> Process skimmed sample {} for process {}".format(name, label))
 
         # Load skimmed dataset and apply baseline selection
         df = ROOT.ROOT.RDataFrame("Events", name + "Skim.root")\
