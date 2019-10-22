@@ -46,7 +46,7 @@ const std::vector<std::string> sampleNames = {
  * Compute event weights to be used for the respective datasets
  *
  * The event weight reweights the full dataset so that the sum of the weights
- * is equal to the expected number of events in data. The expecation is given by
+ * is equal to the expected number of events in data. The expectation is given by
  * multiplying the integrated luminosity of the data with the cross-section of
  * the process in the datasets divided by the number of simulated events.
  */
@@ -304,11 +304,11 @@ auto AddEventWeight(T &df, const std::string& sample) {
 
 
 /*
- * Check that the generator particles matched to the reconstructed taus are
- * actually taus and add this information the the dataset.
+ * Check that the generator particles matched to the identified taus are
+ * actually taus and add this information to the dataset.
  *
  * This information is used to estimate the fraction of events that are falsely
- * reconstructed as taus, e.g., electrons or jets that could fake such a particle.
+ * identified as taus, e.g., electrons or jets that could fake such a particle.
  */
 template <typename T>
 auto CheckGeneratorTaus(T &df, const std::string& sample) {
