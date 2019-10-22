@@ -1,10 +1,10 @@
 # Analysis of Higgs boson decays to two tau leptons using data and simulation from the CMS detector
 
-This repository contains an analysis using reduced NanoAOD files created from CMS open data studying the decay of a Higgs boson into two tau leptons. The code produces plots such as shown below which can be used to study the physics in the CMS datasets.
+This repository contains an analysis using reduced NanoAOD files created from CMS Open Data studying the decay of a Higgs boson into two tau leptons. The code produces plots such as shown below which can be used to study the physics in the CMS datasets. You can find a more extensive description of the analysis in the [record on the CERN Open Data portal](http://opendata.web.cern.ch/record/12350).
 
 Note that the analysis is not validated and should be used only for educational purposes, in particular since no systematic uncertainties are included.
 
-The analysis is loosely based on [the official CMS publication from 2014](http://cms-results.web.cern.ch/cms-results/public-results/publications/HIG-13-004/index.html). See the respective records in the CERN Open Data portal for further information.
+The analysis is loosely based on [the official CMS publication from 2014](http://cms-results.web.cern.ch/cms-results/public-results/publications/HIG-13-004/index.html).
 
 ![](plots/npv.png)
 
