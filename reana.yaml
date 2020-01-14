@@ -1,0 +1,26 @@
+version: 0.6.0
+inputs:
+  files:
+    - skim.cxx
+    - histograms.py
+    - plot.py
+workflow:
+  type: serial
+  specification:
+    steps:
+      - name: compiling
+        environment: reanahub/reana-env-root6:6.18.04
+        commands:
+          - g++ -g -std=c++11 -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx `root-config --cflags --libs`
+      - name: skimming
+        environment: reanahub/reana-env-root6:6.18.04
+        commands:
+          - ./skim
+      - name: histogramming
+        environment: reanahub/reana-env-root6:6.18.04
+        commands:
+          - python histograms.py
+      - name: plotting
+        environment: reanahub/reana-env-root6:6.18.04
+        commands:
+          - python plot.py
