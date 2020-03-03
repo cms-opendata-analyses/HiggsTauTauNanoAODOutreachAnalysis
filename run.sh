@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build and run skimming
-g++ -g -std=c++11 -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx $(root-config --cflags --libs)
+g++ -g -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx $(root-config --cflags --libs)
 time ./skim
 
 # Produce histograms for plotting

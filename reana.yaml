@@ -11,7 +11,7 @@ workflow:
       - name: compiling
         environment: reanahub/reana-env-root6:6.18.04
         commands:
-          - g++ -g -std=c++11 -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx `root-config --cflags --libs`
+          - g++ -g -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx `root-config --cflags --libs`
       - name: skimming
         environment: reanahub/reana-env-root6:6.18.04
         commands:

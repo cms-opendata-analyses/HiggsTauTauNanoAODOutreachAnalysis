@@ -27,7 +27,7 @@ source /cvmfs/sft.cern.ch/lcg/views/LCG_95/x86_64-slc6-gcc8-opt/setup.sh
 The skimming reduces the inital dataset to only the events needed for the analysis. This part is written in C++ in the file `skim.cxx`. To compile and run the program, use the following commands.
 
 ```bash
-g++ -g -std=c++11 -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx $(root-config --cflags --libs)
+g++ -g -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx $(root-config --cflags --libs)
 ./skim
 ```
 
