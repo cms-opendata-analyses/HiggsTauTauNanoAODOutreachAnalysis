@@ -32,6 +32,7 @@ jobs:
           name: skim6.18.04
       - name: skim
         run: ./skim
+      - uses: actions/upload-artifact@v2
         with:
           name: skimmed
           path: skim.root
