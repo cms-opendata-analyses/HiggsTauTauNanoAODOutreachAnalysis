@@ -51,7 +51,7 @@ jobs:
           name: merged
           path: histograms.root
 
-make_plots:
+  make_plots:
     needs: produce_histograms
     runs-on: ubuntu-latest
     container: rootproject/root-conda:6.18.04
