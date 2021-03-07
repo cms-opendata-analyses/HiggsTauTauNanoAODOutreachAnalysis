@@ -31,7 +31,9 @@ jobs:
         with:
           name: skim6.18.04
       - name: skim
-        run: ./skim
+        run: |
+          chmod +x ./skim
+          ./skim
       - uses: actions/upload-artifact@v2
         with:
           name: skimmed
