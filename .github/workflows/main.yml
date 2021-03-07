@@ -39,7 +39,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: skimmed
-          path: *.root
+          path: ./*.root
 
   produce_histograms:
     needs: skim
