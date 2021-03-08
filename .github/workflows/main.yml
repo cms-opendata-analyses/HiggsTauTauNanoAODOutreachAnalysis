@@ -15,9 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: small dataset
-        run: cat skim.cxx | sed -e 's|opendata/cms/derived-data/AOD2NanoAODOutreachTool|root-eos/HiggsTauTauReduced|' > ci_skim.cxx
+        run: cat skim.cxx | sed -e 's|opendata/cms/derived-data/AOD2NanoAODOutreachTool|root-eos/HiggsTauTauReduced|' > ci_skim.cxx; cp ci_skim.cxx skim.cxx
       - name: build
-        run: g++ -g -O3 -Wall -Wextra -Wpedantic -o skim ci_skim.cxx $(root-config --cflags --libs)
+        run: g++ -g -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx $(root-config --cflags --libs)
       - uses: actions/upload-artifact@v2
         with:
           name: skim${{ matrix.version }}
