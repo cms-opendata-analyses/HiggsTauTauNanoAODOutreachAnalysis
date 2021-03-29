@@ -1,0 +1,75 @@
+name: ci
+on: [push,pull_request]
+jobs:
+  build_skim:
+    runs-on: ubuntu-latest
+    container: rootproject/root-conda:${{ matrix.version }}
+    continue-on-error: ${{ matrix.allow_failure }}
+    strategy:
+      matrix:
+        version: [6.18.04]
+        allow_failure: [false]
+        include:
+          - version: latest
+            allow_failure: true
+    steps:
+      - uses: actions/checkout@v2
+      #- name: small dataset
+        #run: cat skim.cxx | sed -e 's|opendata/cms/derived-data/AOD2NanoAODOutreachTool|root-eos/HiggsTauTauReduced|' > ci_skim.cxx; cp ci_skim.cxx skim.cxx
+      - name: build
+        run: g++ -g -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx $(root-config --cflags --libs)
+      - uses: actions/upload-artifact@v2
+        with:
+          name: skim${{ matrix.version }}
+          path: skim
+
+  skim:
+    needs: build_skim
+    runs-on: ubuntu-latest
+    container: rootproject/root-conda:6.18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: skim6.18.04
+      - name: skim
+        run: |
+          chmod +x ./skim
+          ./skim
+      - uses: actions/upload-artifact@v2
+        with:
+          name: skimmed
+          path: ./*.root
+
+  produce_histograms:
+    needs: skim
+    runs-on: ubuntu-latest
+    container: rootproject/root-conda:6.18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: skimmed
+      - run: python histograms.py
+      - uses: actions/upload-artifact@v2
+        with:
+          name: merged
+          path: histograms.root
+
+  make_plots:
+    needs: produce_histograms
+    runs-on: ubuntu-latest
+    container: rootproject/root-conda:6.18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: merged
+      - run: |
+          python plot.py
+          mkdir ci_plots
+          cp *.png ci_plots
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plots
+          path: ci_plots
