@@ -29,7 +29,7 @@ jobs:
     container: rootproject/root-conda:6.18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: skim6.18.04
       - name: skim
@@ -47,7 +47,7 @@ jobs:
     container: rootproject/root-conda:6.18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: skimmed
       - run: python histograms.py
@@ -62,7 +62,7 @@ jobs:
     container: rootproject/root-conda:6.18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: merged
       - run: |
